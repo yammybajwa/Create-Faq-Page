@@ -1,0 +1,106 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background: #fdfdfd;
+    font-family: "Roboto", sans-serif;
+}
+
+.accordion {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 25px;
+    background: #fff;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.05);
+}
+
+.accordion h2 {
+    margin: 10px 2px 25px;
+    font-size: 18px;
+    color: #111;
+}
+
+.accordion .item {
+    margin: 15px 0px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.accordion>div:nth-child(2) {
+    background: #e8eef5;
+    border-left: 4px solid #21b1ea;
+}
+
+.accordion>div:nth-child(3) {
+    background: #f5e8e8;
+    border-left: 4px solid #ea2121;
+}
+
+.accordion>div:nth-child(4) {
+    background: #efeeed;
+    border-left: 4px solid #eaa421;
+}
+
+.accordion>div:nth-child(5) {
+    background: #eee3ef;
+    border-left: 4px solid #df21ea;
+}
+
+.accordion>div:nth-child(6) {
+    background: #eaeae0;
+    border-left: 4px solid #c5c51c;
+}
+
+.accordion .item .question {
+    position: relative;
+    padding: 10px 0px;
+    padding-left: 40px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #222;
+    cursor: pointer;
+}
+
+.accordion .item .question:before {
+    content: "+";
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translate(-50%, -50%) rotate(0deg);
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: 400;
+    color: #555;
+    text-align: center;
+    transition: all 300ms ease-in-out;
+}
+
+.accordion .item .answer {
+    max-height: 0px;
+    overflow: hidden;
+    font-size: 15px;
+    color: #222;
+    transition: max-height 300ms linear;
+}
+
+.accordion .item .answer>* {
+    margin: 5px 40px 15px;
+}
+
+.accordion .item.active .question:before {
+    transform: translate(-50%, -50%) rotate(145deg);
+}
+
+.accordion .item.active .answer {
+    max-height: 500px;
+}
